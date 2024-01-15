@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP Javascript</title>
+</head>
+<body>
+    <div style="text-align:center; margin-top:70px;">
+        <span>OOP Javascript</span><br><br>
+        <input type="number" id="number_1_input" placeholder="Number 1"><br><br>
+        <input type="number" id="number_2_input" placeholder="Number 2"><br><br>
+        <button onclick="calculate();">Calculate</button><br><br>
+        <div id="response_div" style="text-align:center;">
+        </div>
+            
+        <script>
+            class MyCalculator{
+                add(num_1,num_2){ //function keyword is not required here, as in other languages
+                    var result = num_1+num_2;
+                    return result;
+                }
+                subtract(num_1,num_2){ //function keyword is not required here, as in other languages
+                    var result = num_1-num_2;
+                    return result;
+                }
+                multiply(num_1,num_2){ //function keyword is not required here, as in other languages
+                    var result = num_1*num_2;
+                    return result;
+                }
+                divide(num_1,num_2){ //function keyword is not required here, as in other languages
+                    var result = num_1/num_2;
+                    return result;
+                }
+            }
+        </script>
+
+        <script>
+            function calculate(){
+                var number_1=parseFloat(document.getElementById('number_1_input').value);
+                var number_2=parseFloat(document.getElementById('number_2_input').value);
+                var obj = new MyCalculator();
+                var addition = obj.add(number_1,number_2);
+                var subtraction = obj.subtract(number_1,number_2);
+                var multiplication = obj.multiply(number_1,number_2);
+                var division = obj.divide(number_1,number_2);
+                var html_code= `The addition is : ${addition}<br>
+                                The subtraction is : ${subtraction}<br>
+                                The multiplication is : ${multiplication}<br>
+                                The division is : ${division}<br>`;
+                document.getElementById('response_div').innerHTML=html_code;
+            }
+        </script>
+    </div>
+</body>
+</html>
